@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  id는 변수명 class는 클래스의 위치 : 패키지명.클래스명 -->
+	<bean id = "calculator" class = "com.javalec.ex.Calculator"/>
+	
+	<bean id = "myCalculator" class = "com.javalec.ex.MyCalculator"/>
+	
+	<!-- myCalculator 세가지 변수를 초기화 -->
+	<property name = "firstNum" value = "10"/>
+	<property name = "secondNum" value = "2"/>
+	<!-- 객체를 레퍼런스형태로 넣어줘야한다 -->
+	<property name = "calculator">
+	<!-- 위에 있는 calculator를 넣어주겠다는 의미 -->
+		<ref bean = "calculator"/>
+	</property>
+	
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	<bean id = "student3" class = "com.javalec.ex.Student">
+		<constructor-arg value = "유관순"/>
+		<constructor-arg value = "35"/>
+		<constructor-arg>
+			<list>
+				<value>조깅</value>
+				<value>등산</value>
+				<value>마라톤</value>
+			</list>
+		</constructor-arg>
+		<property name = "height" value = "178"/>
+		<property name = "weight" value = "55"/>
+	</bean>
+	
+
+	<bean id = "family" class = "com.javalec.ex.Family" c:fatherName="홍아버지" c:motherName="홍어머니" p:sisterName="홍누나">
+	  <property name = "brotherName" value = "홍형"/>
+	  </bean>
+	
+
+</beans>

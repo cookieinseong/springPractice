@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id = "logAop" class = "com.javalec.ex.LogAop"/>
+	
+	<!-- proxy(대행) 설정 -->
+	<aop:config>
+		<aop:aspect id = "logger" ref="logAop">
+			<!-- 범위 -->
+			<aop:pointcut expression="within(com.javalec.ex.*)" id = "publicM"/>
+			<aop:around pointcut-ref="publicM" method = "loggerAop"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id = "studentInfo" class = "com.javalec.ex.StudentInfo">
+		<property name = "stu_num" value = "101"/>
+		<property name = "name" value = "홍길동"/>
+		<property name = "major" value = "영어"/>
+		<property name = "address" value = "서울"/>
+		<property name = "tel" value = "010-1111-1111"/>
+	</bean>
+	
+	<bean id = "StudentScore" class = "com.javalec.ex.StudentScore">
+		<constructor-arg value = "102"/>
+		<constructor-arg value = "100"/>
+		<constructor-arg value = "70"/>
+		<constructor-arg value = "80"/>
+	</bean>
+	
+	<bean id = "bookLoan" class = "com.javalec.ex.Booklean">
+		<property name = "stu_num" value = "103"/>
+		<property name = "b_num" value = "1"/>
+		<property name = "b_title" value = "졸려"/>
+		<property name = "kind" value = "소설"/>
+		<property name = "b_date" value ="20/05/18"/>
+		<property name = "r_date" value = "20/05/20"/>
+		<property name = "o_date" value = "5"/>
+	</bean>
+		
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	profile="android">
+	
+	<bean id = "environment" class = "com.javalec.ex.Environment">
+		<property name = "browser" value = "android"/>
+		<property name = "ipNum" value = "211.108.107.3"/>
+		<property name = "connection" value = "모바일 접속"/>
+	</bean>
+	
+
+
+</beans>

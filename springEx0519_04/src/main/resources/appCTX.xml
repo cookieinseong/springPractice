@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<aop:aspectj-autoproxy/>
+	<bean id = "lopAop" class = "com.javalec.ex.LopAop"/>
+	
+	
+	<bean id = "book" class = "com.javalec.ex.Book">
+		<property name = "bookNum" value = "1"/>
+		<property name = "bookTitle" value = "푸드스케치"/>
+		<property name = "kind" value = "요리"/>
+		<property name = "author" value = "김유신"/>
+	</bean>
+	
+	<bean id = "rental" class = "com.javalec.ex.Rental">
+		<property name = "memNum" value = "2"/>
+		<property name = "name" value = "카트라이더"/>
+		<property name = "retalBook" value = "푸드스케치"/>
+		<property name = "returning" value = "20-05-23"/>
+		<property name = "address" value = "서울"/>
+	
+	</bean>
+	
+
+</beans>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<bean id = "logAop" class = "com.javalec.ex.LogAop"/>
+	
+	<!-- AOP 선언 -->
+	<aop:config>
+	<!-- 공통 기능을 의미 -->
+		<aop:aspect id = "aspLog" ref = "logAop">
+			<aop:pointcut id = "AopExAll" expression="within(com.javalec.ex.*)"/>
+			<aop:before pointcut-ref="AopExAll" method="beforeAdvice"/>
+		</aop:aspect>
+	
+	</aop:config>
+	
+	
+	
+	<bean id = "eventBoard" class = "com.javalec.ex.EventBoard">
+		<property name = "e_num" value = "1001"/>
+		<property name = "e_title" value = "농어축제"/>
+		<property name = "e_beginningDay" value = "20-05-19"/>
+		<property name = "e_endDay" value = "20-06-19"/>
+	</bean>
+
+	<bean id = "noticeBoard" class = "com.javalec.ex.NoticeBoard">
+		<property name = "n_num" value = "1002"/>
+		<property name = "n_title" value = "농어축제알림"/>
+		<property name = "n_content" value = "실러캔스같은 농어"/>
+		<property name = "n_date" value = "20-05-19"/>
+		<property name = "n_writer" value = "20-06-19"/>
+	</bean>
+	
+	<bean id = "join" class = "com.javalec.ex.Join">
+		<property name = "mem_num" value = "1003"/>
+		<property name = "m_id" value = "농허"/>
+		<property name = "m_pw" value = "1234"/>
+		<property name = "m_name" value = "마스크"/>
+		<property name = "m_joinDate" value = "20-05-10"/>
+
+	</bean>
+	
+</beans>

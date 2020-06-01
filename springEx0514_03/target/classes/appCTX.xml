@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	<bean id = "student1" class = "com.javalec.ex.Student">
+		<constructor-arg value = "홍길동"/>
+		<constructor-arg value = "30"/>
+		<!-- 어레이리스트 값 주입 -->
+		<constructor-arg>
+			<list>
+				<value>웹툰</value>
+				<value>게임</value>
+				<value>자전거</value>
+				<value>독서</value>
+			</list>
+		</constructor-arg>
+		<property name = "height" value = "187"/>
+		<property name = "weight" value = "70"/>
+	</bean>
+	
+	<bean id = "student2" class = "com.javalec.ex.Student">
+		<constructor-arg value = "김유신"/>
+		<constructor-arg value = "30"/>
+		<!-- 어레이리스트 값 주입 -->
+		<constructor-arg>
+			<list>
+				<value>웹툰</value>
+				<value>게임</value>
+				<value>자전거</value>
+				<value>독서</value>
+			</list>
+		</constructor-arg>
+		<property name = "height" value = "187"/>
+		<property name = "weight" value = "70"/>
+	</bean>
+	
+	
+	<bean id = "studentInfo" class = "com.javalec.ex.StudentInfo">
+		<property name = "student">
+			<ref bean = "student1"/>
+		</property>
+	</bean>
+	
+</beans>

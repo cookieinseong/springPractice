@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- StuScore 클래스를 stuScore 변수에다가 저장 -->
+	<bean id = "StuProcess" class = "com.javalec.ex.StuProcess"/>
+	<bean id = "StuScore" class = "com.javalec.ex.StuScore">
+	<!-- StuProcess 클래스를 stuProcess 객체에 저장  -->
+	
+	<property name = "stu_num" value = "1"/>
+	<property name = "stu_name" value = "이인성"/>
+	<property name = "kor" value = "80"/>
+	<property name = "eng" value = "100"/>
+	<property name = "math" value = "20"/>
+	<property name = "total" value = "200"/>
+	<property name = "avg" value = "66"/>
+	<property name = "sp">
+		<ref bean = "StuProcess"/>
+	</property> 
+	</bean>
+
+</beans>
